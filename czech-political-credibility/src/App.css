@@ -1,0 +1,134 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.speakers-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.speaker-wrapper {
+  position: relative;
+  margin: 10px;
+  display: inline;
+}
+
+.speaker-image {
+  width: 35px; /* Adjust size as needed */
+  height: 35px; /* Adjust size as needed */
+  border-radius: 50%; /* Make the image circular */
+}
+
+/*
+.tooltip {
+  position: absolute;
+  top: 50%;
+  left: calc(100% - 10px);
+  transform: translateY(-50%);
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease;
+  z-index: 9999;
+  white-space: nowrap;
+}*/
+.tooltip {
+  position: absolute;
+  top: 50%;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s ease;
+  z-index: 9999;
+  text-align: left;
+}
+
+
+/*
+.box:hover .tooltip:not(.left),
+.box:not(:hover) .tooltip.left {
+  left: auto;
+  left: calc(100% + 10px);
+}
+*/
+.speaker-wrapper:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.group-container {
+  display: flex; /* Use flexbox */
+  flex-wrap: wrap; /* Allow wrapping of boxes */
+  justify-content: space-between; /* Distribute space between boxes */
+}
+
+.box {
+  position: relative;
+  width: calc(50% - 20px); /* Set width of each box to half minus the spacing */
+  max-width: 400px; /* Limit the maximum width of each box */
+  /*height: 200px; /* Set a fixed height for each box */
+  border: 2px solid #ccc; /* Border style */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px; /* Padding inside the box */
+  margin-bottom: 20px; /* Spacing between boxes */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+@media (max-width: 768px) {
+  .box {
+    width: calc(100% - 20px); /* Set width of each box to full width on smaller screens */
+  }
+}
+
+svg {
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+svg:hover {
+  transform: scale(1.1); /* Scale up the image on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow effect on hover */
+}
